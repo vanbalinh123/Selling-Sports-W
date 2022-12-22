@@ -1,0 +1,477 @@
+/* section one */
+.section-one .section-one-img {
+    width: 100%;
+    height: 80rem;
+}
+
+.section-one .section-one-img img {
+    width: 100%;
+    height: 80rem;
+    object-fit: cover;
+}
+
+.section-one {
+    position: relative;
+    margin-top: 8rem;
+}
+
+.section-one-content {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+}
+
+.section-one-content h1 {
+    font-size: 5rem;
+}
+
+.section-one-content h5 {
+    font-size: 2rem;
+    background-color: #342A2A;
+    width: 20rem;
+    padding: 2rem;
+}
+
+.one-cotent--click {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.section-one-content .one-cotent--click:hover {
+    opacity: 0.5;
+}
+
+.shadow-one {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    opacity: 0.4;
+    width: 100%;
+
+}
+
+/* section two  */
+.section-two {
+    display: flex;
+    margin: 8rem 5%;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.section-two-content {
+    height: 30rem;
+    width: 35rem;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.section-two .section-two-img img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.section-two .section-two-img {
+    height: 30rem;
+    width: 35rem;
+}
+
+.section-two-content .content--title {
+    position: absolute;
+    /* bottom: 30%;
+    left: 25%;
+    right: 25%; */
+    top: 30%;
+    bottom: 30%;
+    left: 30%;
+    right: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+
+.section-two-content .content--title a {
+    font-size: 1.5rem;
+}
+
+.shadow-two {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    opacity: 0.4;
+    width: 100%;
+}
+
+.section-two-content:hover .content--title a {
+    opacity: 0.8;
+}
+
+/* section three */
+.section-three {
+    background-color: #342A2A;
+    width: 100%;
+    height: 50rem;
+}
+
+.section-three .section-three-content {
+    margin: 0 auto;
+    width: 90%;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0rem;
+    gap: 2rem;
+}
+
+.section-three .section-three-content h1 {
+    font-size: 5rem;
+}
+
+.section-three-title {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-Specifically {
+    display: flex;
+    gap: 5rem;
+    flex: 3;
+}
+
+.title-Specifically div {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background-color: antiquewhite;
+    color: #342A2A;
+}
+
+/* section four */
+.section-four {
+    width: 100%;
+    height: 60rem;
+    background-color: #fff;
+    color: #342A2A;
+}
+
+.section-four-content {
+    width: 90%;
+    height: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.section-four-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-four-title h1 {
+    font-size: 5rem;
+    color: #342A2A;
+}
+
+.section-four-img {
+    display: flex;
+    width: 100%;
+    padding: 0 20%;
+    justify-content: center;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+.section-four-img img {
+    /* flex: 1; */
+    width: 22rem;
+    height: 25rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+.section-four-img div {
+    flex: 1;
+    height: 25rem;
+    position: relative;
+    width: 22rem;
+}
+
+.section-four-click {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2.5rem;
+}
+
+.section-four-click a {
+    padding: 2rem 4rem;
+    background-color: #342A2A;
+    opacity: 1;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.four-click:hover {
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.section-four-img img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+
+/* section five */
+.section-five {
+    color: #342A2A;
+    width: 100%;
+    height: 20rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.section-five:hover {
+    cursor: pointer;
+}
+
+.section-five-content {
+    width: 90%;
+    height: 20rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.section-five-content h1 {
+    font-size: 5rem;
+}
+
+.section-five-menu {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.section-five-product {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 110%;
+    height: 40rem;
+    display: flex;
+    padding: 0 5%;
+}
+
+.section-five-title {
+    flex: 1;
+    background-color: #fff;
+}
+
+.section-five-img {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section-five-img img {
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.section-five-title .section-five-img img:hover {
+    transform: scale(1.1);
+}
+
+.img-content {
+    color: #342A2A;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-content .img-firstChild {
+    height: 7rem;
+    padding-top: 1rem;
+}
+
+.img-lastChild {
+    height: 3rem;
+}
+
+.section-five-product2,
+.section-five-product3,
+.section-five-product4 {
+    visibility: hidden;
+    transition: visibility 0.3s;
+    background-color: #fff;
+}
+
+.click-2:hover .section-five-product2 {
+    visibility: visible;
+}
+
+.click-3:hover .section-five-product3 {
+    visibility: visible;
+}
+
+.click-4:hover .section-five-product4 {
+    visibility: visible;
+}
+
+.section-five-menu li:hover {
+    color: red;
+}
+
+
+/* section six */
+.section-six {
+    width: 100%;
+    height: 50rem;
+    margin-top: 50rem;
+}
+
+.section-six-main {
+    width: 90%;
+    height: 50rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.section-six-content {
+    width: 70%;
+    height: 50rem;
+    background-color: #342A2A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 15%;
+    text-align: center;
+    gap: 3.5rem;
+}
+
+.click-shopNow {
+    font-size: 2rem;
+    background-color: antiquewhite;
+    color: #342A2A;
+    width: 20rem;
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.click-shopNow:hover {
+    opacity: 0.5;
+}
+
+.section-six-img {
+    width: 30%;
+    height: 35rem;
+    position: relative;
+}
+
+.section-six-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 35rem;
+    transform: scaleX(1.3) translateX(-11%);
+    object-fit: cover;
+    box-shadow: 0px 0px 5px #342A2A;
+}
+
+/* section seven */
+.section-seven {
+    width: 100%;
+    height: 50rem;
+    margin-top: 10rem;
+}
+
+.section-seven-main {
+    width: 90%;
+    height: 50rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.section-seven-img {
+    width: 30%;
+    height: 35rem;
+    position: relative;
+}
+
+.section-seven-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 35rem;
+    object-fit: cover;
+    transform: scaleX(1.3) translateX(11%);
+    box-shadow: 0px 0px 5px #342A2A;
+}
+
+.section-seven-content {
+    width: 70%;
+    height: 50rem;
+    background-color: #342A2A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 10%;
+    text-align: center;
+    gap: 3.5rem;
+}
+
+

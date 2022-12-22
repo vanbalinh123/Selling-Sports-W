@@ -1,0 +1,46 @@
+.artists {
+    color: #342a2a;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.artists h1 {
+    color: #342a2a;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.content-artists {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 25rem 25rem 25rem 25rem 25rem;
+    grid-template-rows: 37rem 25rem 57rem 35rem 32rem;
+    margin: 0 auto;
+}
+
+.content-artists .name-artists {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* box-shadow: 0px 0px 2px 1px ; */
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-size: 2.2rem;
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.7rem;
+}
+
+.names p {
+    text-decoration: underline;
+}
+
+.names p:hover{
+    color: red;
+}

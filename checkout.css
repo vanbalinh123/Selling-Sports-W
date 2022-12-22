@@ -1,0 +1,396 @@
+.section-checkout {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 8rem;
+    display: flex;
+    color: #342A2A;
+    gap: 5%;
+}
+
+.information-shipping {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 5rem;
+    background-color: #fff;
+}
+
+.information-shipping .name-shop {
+    font-size: 5rem;
+}
+
+.information-shipping .online-payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.choose-online-payment {
+    font-weight: bold;
+}
+
+.information-shipping .online-payment div {
+    display: flex;
+    width: 100%;
+    gap: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.information-shipping .online-payment div .shoppay,
+.information-shipping .online-payment div .paypal {
+    border: 1px solid #342A2A;
+    padding: 1.5rem 0rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+.information-shipping .online-payment div .shoppay {
+    background-color: yellow;
+    border: none;
+}
+
+.information-shipping .online-payment div .paypal {
+    background-color: blue;
+    border: none;
+    color: #fff;
+}
+
+.or {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.loginnode {
+    cursor: pointer;
+}
+.loginnode:hover {
+    text-decoration: underline;
+}
+
+.name-title,
+.name-shipping-address {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.not-account {
+    color: grey;
+}
+
+.direct-payment {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-information {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.title-information {
+    display: flex;
+}
+
+.name-title {
+    flex: 1;
+}
+
+.question-account {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.input-contact-information {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-checkbox {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input-checkbox p {
+    font-size: 1.6rem;
+}
+
+.input-email input {
+    width: 100%;
+    height: 5rem;
+    padding-left: 2rem;
+    border-radius: 0.7rem;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: red;
+}
+
+.note2 {
+    padding-top: 0.5rem;
+    color: red;
+}
+
+.shipping-address {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-shipping-address {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.shipping-address input {
+    width: 100%;
+    height: 5rem;
+    border-radius: 0.7rem;
+    padding-left: 2rem;
+}
+
+.input-first-lastName {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-lastName {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.textcontent-first-last {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.textcontent-first-last div {
+    width: 100%;
+}
+
+.input-city-postal {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-postal {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.textconent-city-postal {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.textconent-city-postal div {
+    width: 100%;
+}
+
+.checkoutnode {
+    display: flex;
+    justify-content: end;
+}
+
+.checkoutnode button {
+    padding: 2rem 2rem;
+    border-radius: 0.7rem;
+    border: none;
+    background-color: #342A2A;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkoutnode button:hover {
+    background-color: green;
+}
+
+.section-checkout input {
+    border: 1px solid grey;
+}
+
+.section-checkout input::placeholder {
+    color: #342A2A;
+    opacity: 1;
+}
+
+.section-checkout input:hover {
+    /* outline: 2px solid red; */
+    border: 2px solid #342A2A;
+    opacity: 0.7;
+}
+
+.section-checkout input:focus {
+    outline: 1px solid #fff;
+    border: 2px solid #342A2A;
+    opacity: 1;
+}
+
+.error {
+    outline: 1px solid #fff;
+    border: 2px solid red;
+    opacity: 1;
+}
+
+/* information-products  */
+.information-products-choosed {
+    flex: 1;
+    border: 1px solid grey;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    background-color: antiquewhite;
+}
+
+.img-produt img {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid grey;
+}
+
+.img-produt {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+}
+
+.information-products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.information-product {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.information {
+    flex: 5;
+    display: flex;
+    gap: 2rem;
+}
+
+.price-product {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+.title-product {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.size-color-product {
+    display: flex;
+}
+
+.number-product {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -10%;
+    top: -10%;
+}
+
+/* total price */
+.total-price {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 2rem;
+}
+
+.content-total-price {
+    display: flex;
+    flex-direction: column;
+    border-top: 0.2px solid grey;
+    border-bottom: 0.2px solid grey;
+}
+
+.content-total-price .subtotal,
+.content-total-price .discount,
+.content-total-price .shipping {
+    display: flex;
+    height: 5rem;
+    align-items: center;
+}
+
+.content-total-price .subtotal div,
+.content-total-price .discount div,
+.content-total-price .shipping div {
+    flex: 1;
+}
+
+.name-subtotal,
+.name-discount,
+.name-shipping {
+    color: grey;
+}
+
+.price-subtotal,
+.total-discount,
+.total-shipping {
+    display: flex;
+    justify-content: end;
+}
+
+.size-color-product {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.total {
+    display: flex;
+}
+
+.total div {
+    flex: 1;
+}
+
+.name-total {
+    font-weight: bold;
+}
+
+.price-total {
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 5rem;
+}
