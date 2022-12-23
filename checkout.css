@@ -264,13 +264,13 @@
 }
 
 .img-produt img {
-    width: 10rem;
+    width: 9rem;
     height: 10rem;
     border: 1px solid grey;
 }
 
 .img-produt {
-    width: 10rem;
+    width: 9rem;
     height: 10rem;
     position: relative;
 }

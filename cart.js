@@ -1,5 +1,12 @@
 cart = JSON.parse(localStorage.getItem('cart'));
 const allProductNode = document.querySelector('.allProduct');
+let chooseProduct = {
+    trendingImg: '',
+    trendingName: '',
+    trendingPrice: '',
+    selectedSizeNode: '',
+    selectedColorNode: ''
+}
 cart.forEach(item => {
     const price = item.price.slice(1,item.price.length);
     const total = Number(price) * item.index;

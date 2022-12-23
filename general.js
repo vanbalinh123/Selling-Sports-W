@@ -43,4 +43,29 @@ shoppingBagNode.addEventListener('click', ()=> {
     window.location = `cart.html`;
 })
 
+function searchfunc(){
+    const menusearch = document.querySelector('.menu__search');
+    const menuitems = Array.from(document.querySelectorAll('.menu__item'));
+    // menusearch.value = menusearch.value.toLowerCase();
+    // an va hien len khi search
+    menuitems.forEach(function(el) {
+        let text = el.innerText;
+        if(text.indexOf(menusearch.value)>-1)
+        el.style.display="";
+        else el.style.display="none";
+    })
+}
 
+const menuitems = Array.from(document.querySelectorAll('.menu__item'));
+menuitems.forEach(item => { 
+    item.addEventListener('click',() => {
+        const trendingImg = item.children[0].children[0].src;
+        const trendingName = item.children[1].children[0].textContent;
+        const trendingPrice = item.children[1].children[1].textContent;
+        chooseProduct.trendingImg = trendingImg;
+        chooseProduct.trendingName = trendingName;
+        chooseProduct.trendingPrice = trendingPrice;
+        localStorage.setItem('chooseProduct',JSON.stringify(chooseProduct));
+        window.location = 'trending.html';
+    });
+});
