@@ -7,8 +7,8 @@ let chooseProduct = {
     trendingImg: '',
     trendingName: '',
     trendingPrice: 0,
-    // selectedSizeNode: '',
-    // selectedColorNode: ''
+    selectedSizeNode: '',
+    selectedColorNode: ''
 }
 // let cart = JSON.parse(localStorage.getItem('cart'));
 // if(cart === null) cart = [];
