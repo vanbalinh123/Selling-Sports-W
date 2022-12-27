@@ -38,6 +38,7 @@ cart.forEach(item => {
             <div class="total full-total">$${total.toFixed(2)}</div>
         </div>`;
 });
+
 const fullToTalNodes = document.querySelectorAll('.full-total');
 let fullTotal = 0;
 fullToTalNodes.forEach(item => {
@@ -115,3 +116,5 @@ const checkoutNode = document.querySelector('.buttonCheckout');
 checkoutNode.addEventListener('click', ()=> {
     window.location = `checkout.html`
 })
+
+const productCartNode = document.querySelectorAll('.product');

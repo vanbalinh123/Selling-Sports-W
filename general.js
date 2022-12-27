@@ -147,8 +147,18 @@ menusearch.addEventListener('input', (e)=> {
             <div clas="price__item">${item.price}</div>
         </div>
     `;
+    productSearch.addEventListener('click',() => {
+        console.log('hahaa')
+        const searchImg = productSearch.children[0].children[0].src;
+        const searchName = productSearch.children[1].children[0].textContent;
+        const searchPrice = productSearch.children[1].children[1].textContent;
+        chooseProduct.trendingImg = searchImg;
+        chooseProduct.trendingName = searchName;
+        chooseProduct.trendingPrice = searchPrice;
+        localStorage.setItem('chooseProduct',JSON.stringify(chooseProduct));
+        window.location = 'trending.html';
+    });
     })
-    console.log(productSearch)
 })
 
 const searchs = document.querySelectorAll('.menu__item');
