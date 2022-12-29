@@ -22,10 +22,10 @@ headerLogo.addEventListener('click',() => {
     window.location = `index.html`;
 });
 
-const userNode = document.querySelector('.user');
-userNode.addEventListener('click', () => {
-    window.location = `login.html`;
-})
+// const userNode = document.querySelector('.user');
+// userNode.addEventListener('click', () => {
+//     window.location = `login.html`;
+// }
 
 const deleteNode = document.querySelector('.button-delete');
 deleteNode.addEventListener('click', ()=> {
@@ -175,3 +175,48 @@ for(let i = 0; i < searchs.length; i+=1) {
         window.location = 'trending.html';
     });
 }
+
+isSuccessfull = JSON.parse(localStorage.getItem('isSuccessfull'));
+let accountlogin = JSON.parse(localStorage.getItem('accountlogin'));
+if(isSuccessfull === true) {
+    const nameAccountNode = document.querySelector('.name-account');
+    const firstnamelogin = document.querySelector('.firstnamelogin');
+    const lastnamelogin = document.querySelector('.lastnamelogin');
+    nameAccountNode.classList.add('hidden-if-no-login')
+    firstnamelogin.textContent = `${accountlogin.firstnamelogin}`;
+    lastnamelogin.textContent = `${accountlogin.lastnamelogin}`;
+} else if(isSuccessfull === false) {
+    const nameAccountNode = document.querySelector('.name-account');
+    nameAccountNode.classList.remove('hidden-if-no-login')
+}
+
+const svgUserNode = document.querySelector('.svg-user');
+const logregNode = document.querySelector('.log-reg')
+
+svgUserNode.addEventListener('click', () => {
+    logregNode.classList.add('hidden-log-reg');
+    const userLoginNode = document.querySelector('.user-login');
+    userLoginNode.addEventListener('click', ()=> {
+        window.location = `login.html`
+    });
+
+    const userREgisterNode = document.querySelector('.user-register');
+    userREgisterNode.addEventListener('click', ()=> {
+        window.location = `register.html`
+    });
+
+    const userLogoutNode = document.querySelector('.user-logout');
+    userLogoutNode.addEventListener('click', ()=> {
+        if(isSuccessfull === true) {
+            accountlogin = {};
+            isSuccessfull = false;
+            localStorage.setItem('accountlogin',JSON.stringify(accountlogin));
+            localStorage.setItem('isSuccessfull',JSON.stringify(isSuccessfull));
+            alert('You are logged out of your account');
+            window.location = `login.html`;
+        } else {
+            alert('You are not logged in to your account!');
+        }
+    })
+}) 
+

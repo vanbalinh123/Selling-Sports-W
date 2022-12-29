@@ -118,3 +118,7 @@ checkoutNode.addEventListener('click', ()=> {
 })
 
 const productCartNode = document.querySelectorAll('.product');
+// const shoppingBagNode = document.querySelector('.shopping-bag');
+// shoppingBagNode.addEventListener('click', ()=> {
+//     window.location = `cart.html`;
+// })

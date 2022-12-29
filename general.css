@@ -482,3 +482,57 @@ footer::placeholder {
     flex-direction: column;
     gap: 1rem;
 }
+.user {
+    position: relative;
+}
+
+.name-account {
+    display: flex;
+    font-size: 1.2rem;
+    position: absolute;
+    gap: 0.5rem;
+    visibility: hidden;
+    width: 15rem;
+    justify-content: center;
+    left: -250%;
+    transition: visibility 0.3s;
+}
+
+.hidden-if-no-login {
+    visibility: visible;
+}
+
+.log-reg {
+    position: absolute;
+    left: -160%;
+    visibility: hidden;
+    border-radius: 1rem;
+    background-color: #fff;
+    border: 1px solid #342A2A;
+    transition: visibility 0.3s;
+}
+
+.log-reg div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    color: #342A2A;
+    transition: color 0.3s;
+}
+
+.log-reg div:hover {
+    color: red;
+}
+
+.user-login,
+.user-register {
+    border-bottom: 1px solid #342A2A;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hidden-log-reg {
+    visibility: visible;
+}

@@ -57,6 +57,8 @@ const textcontentPostal = document.querySelector('.textcontent-postal');
 const phoneNode = document.querySelector('.phonenode');
 const textcontentPhone = document.querySelector('.textcontent-phone');
 
+accountlogin = JSON.parse(localStorage.getItem('accountlogin'));
+isSuccessfull = JSON.parse(localStorage.getItem('isSuccessfull'));
 const checkValid = function(item) {
     kt = 0;
     if(item.value === '') kt = 1;
@@ -74,8 +76,16 @@ checkoutNode.addEventListener('click', ()=> {
         } else {
             emailNode.classList.remove('error');
             textcontentEmail.textContent = ``;
+            // if(isSuccessfull === true) {
+            //     // if(emailNode.value !== accountlogin.emaillogin) {
+            //         alert('This is not the email you signed up with!');
+            //     // }; 
+            // } 
+            if(isSuccessfull === false) {
+                alert('Can not pay because you have not logged into your account!');
+            }
         }
-        
+
         if(checkValid(countryNode) === 1) {
             textcontentCountry.textContent = `Enter a country!`;
             countryNode.classList.add('error');
@@ -140,7 +150,7 @@ checkoutNode.addEventListener('click', ()=> {
         }
     }
 
-    if(temp === 0 && cart.length > 0) {
+    if(temp === 0 && cart.length > 0 && isSuccessfull === true) {
         alert('Order Success!');
         cart = [];
         localStorage.setItem('cart',JSON.stringify(cart));
