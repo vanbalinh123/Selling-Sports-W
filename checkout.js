@@ -1,5 +1,6 @@
 cart = JSON.parse(localStorage.getItem('cart'));
 fullTotal = JSON.parse(localStorage.getItem('fullTotal'));
+console.log(fullTotal);
 let chooseProduct = {
     trendingImg: '',
     trendingName: '',

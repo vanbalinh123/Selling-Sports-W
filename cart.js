@@ -1,4 +1,5 @@
 cart = JSON.parse(localStorage.getItem('cart'));
+if(cart === null) cart = [];
 const allProductNode = document.querySelector('.allProduct');
 let chooseProduct = {
     trendingImg: '',
@@ -39,11 +40,10 @@ cart.forEach(item => {
         </div>`;
 });
 
-const fullToTalNodes = document.querySelectorAll('.full-total');
 let fullTotal = 0;
-fullToTalNodes.forEach(item => {
-    fullTotal += Number(item.textContent.slice(1,item.textContent.length));
-});
+cart.forEach(item => {
+    fullTotal += Number(item.price.slice(1,item.price.length)) * item.index;
+})
 
 const contentCoverNode = document.querySelector('.content-cover');
 contentCoverNode.children[0].children[1].textContent = `$${fullTotal.toFixed(2)}`;
@@ -52,79 +52,77 @@ const firstTotalNode = document.querySelector('.first-total');
 firstTotalNode.children[1].textContent = `$${fullTotal.toFixed(2)}`;
 contentCoverNode.children[4].children[1].textContent = `$${fullTotal.toFixed(2)}`;
 
-// const findProduct = (node) => {
-//     let index = -1;
-//     let nameProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[0].textContent;
-//     let sizeProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[1].children[0].textContent;
-//     let colorProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[1].children[1].textContent;
-//     for(let i = 0; i <= cart.length; i += 1) {
-//         if(cart[i].name === nameProduct && cart[i].size === sizeProduct && cart[i].color === colorProduct) {
-//             index = i;
-//             break;
-//         }
-//     }
-//     return index;
-// }
-
+const findProduct = (node) => {
+    let index = -1;
+    let nameProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[0].textContent;
+    let sizeProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[1].children[0].textContent;
+    let colorProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[1].children[1].textContent;
+    colorProduct = colorProduct.slice(1,colorProduct.length);
+    for(let i = 0; i < cart.length; i += 1) {
+        if(cart[i].name === nameProduct && cart[i].size === sizeProduct && cart[i].color === colorProduct) {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
 const addNodes = document.querySelectorAll('.add');
 const subtractionNodes = document.querySelectorAll('.subtraction');
-const indexNodes = document.querySelectorAll('.index');
-for(let i = 0; i < addNodes.length; i += 1) {
-    addNodes[i].addEventListener('click',()=>{
-        cart[i].index += 1;
-        indexNodes[i].textContent = `${cart[i].index}`;
-        localStorage.setItem('cart',JSON.stringify(cart));
-        updateCart(cart);
-        const newTotal = Number(fullToTalNodes[i].textContent.slice(1,fullToTalNodes[i].textContent.length)) + Number(cart[i].price.slice(1,cart[i].price.length));
-        fullToTalNodes[i].textContent = `$${newTotal.toFixed(2)}`;
-        fullTotal += Number(cart[i].price.slice(1,cart[i].price.length));
+addNodes.forEach(item => {
+    item.addEventListener('click',()=>{
+        let id = findProduct(item);
+        cart[id].index += 1;
+        item.parentElement.children[1].textContent = `${cart[id].index}`;
+        const newTotal = Number(cart[id].price.slice(1,cart[id].price.length)) * cart[id].index;
+        item.parentElement.parentElement.parentElement.children[2].textContent = `$${newTotal.toFixed(2)}`;
+        fullTotal += Number(cart[id].price.slice(1,cart[id].price.length));
         firstTotalNode.children[1].textContent = `$${fullTotal.toFixed(2)}`;
         contentCoverNode.children[0].children[1].textContent = `$${fullTotal.toFixed(2)}`;
         contentCoverNode.children[4].children[1].textContent = `$${fullTotal.toFixed(2)}`;
+        localStorage.setItem('cart',JSON.stringify(cart));
+        updateCart(cart);
+        cart = JSON.parse(localStorage.getItem('cart'));
         localStorage.setItem('fullTotal',JSON.stringify(fullTotal));
     });
-    subtractionNodes[i].addEventListener('click',()=>{
-        if(cart[i].index > 1) {
-            cart[i].index -= 1;
-            indexNodes[i].textContent = `${cart[i].index}`;
-            localStorage.setItem('cart',JSON.stringify(cart));
-            updateCart(cart);
-            const newTotal = Number(fullToTalNodes[i].textContent.slice(1,fullToTalNodes[i].textContent.length)) - Number(cart[i].price.slice(1,cart[i].price.length));
-            fullToTalNodes[i].textContent = `$${newTotal.toFixed(2)}`;
-            fullTotal -= Number(cart[i].price.slice(1,cart[i].price.length));
+})
+
+subtractionNodes.forEach(item => {
+    item.addEventListener('click',()=>{
+        let id = findProduct(item);
+        if(cart[id].index > 1) {
+            cart[id].index -= 1;
+            item.parentElement.children[1].textContent = `${cart[id].index}`;
+            const newTotal = Number(cart[id].price.slice(1,cart[id].price.length)) * cart[id].index;
+            item.parentElement.parentElement.parentElement.children[2].textContent = `$${newTotal.toFixed(2)}`;
+            fullTotal -= Number(cart[id].price.slice(1,cart[id].price.length));
             firstTotalNode.children[1].textContent = `$${fullTotal.toFixed(2)}`;
             contentCoverNode.children[0].children[1].textContent = `$${fullTotal.toFixed(2)}`;
             contentCoverNode.children[4].children[1].textContent = `$${fullTotal.toFixed(2)}`;
+            localStorage.setItem('cart',JSON.stringify(cart));
+            updateCart(cart);
+            cart = JSON.parse(localStorage.getItem('cart'));
             localStorage.setItem('fullTotal',JSON.stringify(fullTotal));
         }
     });
-}
+})
 
-const removeNode = document.querySelectorAll('.remove');
-for(let i = 0; i < removeNode.length; i+= 1) {
-    removeNode[i].addEventListener('click', ()=> {
-        for(let j = 0; j < cart.length; j+=1) {
-            let nameRemoveNode = removeNode[i].parentElement.parentElement.children[0].children[1].children[0].textContent;
-            if(nameRemoveNode === cart[j].name) {
-                cart.splice(j, 1);
-                removeNode[i].parentElement.parentElement.remove();
-            }
-        }
-        const fullToTalNodes = document.querySelectorAll('.full-total');
-        let fullTotal = 0;
-        fullToTalNodes.forEach(item => {
-        fullTotal += Number(item.textContent.slice(1,item.textContent.length));
-        });
+let removeNodes = document.querySelectorAll('.remove');
+for(let i = 0; i < removeNodes.length; i+= 1) {
+    removeNodes[i].addEventListener('click', ()=> {
+        let id = findProduct(removeNodes[i].parentElement.children[0].children[2]);
+        fullTotal -= Number(cart[id].price.slice(1,cart[id].price.length)) * cart[id].index;
         contentCoverNode.children[0].children[1].textContent = `$${fullTotal.toFixed(2)}`;
         firstTotalNode.children[1].textContent = `$${fullTotal.toFixed(2)}`;
         contentCoverNode.children[4].children[1].textContent = `$${fullTotal.toFixed(2)}`;
+        cart.splice(id,1);
+        removeNodes[i].parentElement.parentElement.remove();
         localStorage.setItem('cart',JSON.stringify(cart));
-        localStorage.setItem('fullTotal',JSON.stringify(fullTotal));
         updateCart(cart);
-        // window.location = `cart.html`
-    })
+        cart = JSON.parse(localStorage.getItem('cart'));
+        localStorage.setItem('fullTotal',JSON.stringify(fullTotal));
+    });
 }
-localStorage.setItem('fullTotal',JSON.stringify(fullTotal));
+
 
 const checkoutNode = document.querySelector('.buttonCheckout');
 checkoutNode.addEventListener('click', ()=> {
