@@ -62,6 +62,12 @@
     border: none;
     color: #fff;
     background-color: #342A2A;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.click-input:hover {
+    opacity: 0.7;
 }
 
 .more {

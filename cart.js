@@ -1,13 +1,13 @@
 cart = JSON.parse(localStorage.getItem('cart'));
 if(cart === null) cart = [];
 const allProductNode = document.querySelector('.allProduct');
-// let chooseProduct = {
-//     trendingImg: '',
-//     trendingName: '',
-//     trendingPrice: '',
-//     selectedSizeNode: '',
-//     selectedColorNode: ''
-// }
+let chooseProduct = {
+    trendingImg: '',
+    trendingName: '',
+    trendingPrice: '',
+    selectedSizeNode: '',
+    selectedColorNode: ''
+}
 if(cart !== null) {
     cart.forEach(item => {
         const price = item.price.slice(1,item.price.length);

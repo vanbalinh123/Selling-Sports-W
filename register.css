@@ -48,6 +48,13 @@
     background-color: #342A2A;
     color: #fff;
     border: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.button-register button:hover {
+    opacity: 0.7;
 }
 
 .button-register {

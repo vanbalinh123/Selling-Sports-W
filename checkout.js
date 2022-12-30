@@ -1,12 +1,12 @@
 cart = JSON.parse(localStorage.getItem('cart'));
 fullTotal = JSON.parse(localStorage.getItem('fullTotal'));
-// let chooseProduct = {
-//     trendingImg: '',
-//     trendingName: '',
-//     trendingPrice: '',
-//     selectedSizeNode: '',
-//     selectedColorNode: ''
-// }
+let chooseProduct = {
+    trendingImg: '',
+    trendingName: '',
+    trendingPrice: '',
+    selectedSizeNode: '',
+    selectedColorNode: ''
+}
 const priceSubtotalNode = document.querySelector('.price-subtotal');
 priceSubtotalNode.textContent = `$${fullTotal.toFixed(2)}`;
 const priceTotalNode = document.querySelector('.price-total')

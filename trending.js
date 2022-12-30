@@ -319,6 +319,8 @@ pushCmtNode.addEventListener('click',() => {
         userCmtList.splice(index,1);
         localStorage.setItem('userCmtList',JSON.stringify(userCmtList));
         deleteCmtNode.parentElement.parentElement.remove();
+        alert('Do you want to delete this cmt?');
+        window.location = `trending.html`;
     })
     }
 })
@@ -329,5 +331,7 @@ deleteCmtNodes.forEach(item => {
         userCmtList.splice(index,1);
         localStorage.setItem('userCmtList',JSON.stringify(userCmtList));
         item.parentElement.parentElement.remove();
+        alert('Do you want to delete this cmt?');
+        window.location = `trending.html`;
     })
 })

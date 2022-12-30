@@ -328,6 +328,10 @@
     align-items: center;
 }
 
+/* .info-user img {
+    border: 1px solid #342A2A;
+} */
+
 .product-reviews {
     display: flex;
     flex-direction: column;
@@ -397,7 +401,7 @@
 
 .user-login-cmt {
     border: 1px solid #342A2A;
-    width: 5%;
+    width: 5rem;
     height: 5rem;
     overflow: hidden;
 }
@@ -418,6 +422,15 @@
 .close-cmt div {
     border: 1px solid #342A2A;
     padding: 1rem 1.5rem;
+    background-color: #fff;
+    color: #342A2A;
+    transition: background-color 0.3s ,color 0.3s;
+    cursor: pointer;
+}
+
+.close-cmt div:hover {
+    background-color: #342A2A;
+    color: #fff;
 }
 
 .delete-cmt {
@@ -435,14 +448,16 @@
     border-top-right-radius: 0.8rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    background-color: #342A2A;
+    color: #fff;
 }
 
 .delete-cmt:hover {
-    color: #fff;
-    background-color: #342A2A;
+    background-color: red;
     
 }
 
 .hiddenn {
     display: none;
 }
+
