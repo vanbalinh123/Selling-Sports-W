@@ -153,3 +153,181 @@ addCart.addEventListener('click',()=>{
     }
 });
 
+const inputCmtNode = document.querySelector('.input-cmt');
+const closeAndCmtNode = document.querySelector('.close-cmt');
+
+inputCmtNode.addEventListener('focus', ()=> {
+    closeAndCmtNode.classList.remove('hiddenn');
+})
+
+inputCmtNode.addEventListener('blur', (e)=> {
+    if(e.target.value === '')
+        closeAndCmtNode.classList.add('hiddenn');
+})
+
+const cancelNode = document.querySelector('.close');
+cancelNode.addEventListener('click', ()=> {
+    closeAndCmtNode.classList.add('hiddenn');
+    inputCmtNode.value = ``;
+})
+function UserCmt(id,name,year,month,day,hour,minute,comment) {
+    this.id = id;
+    this.name = name;
+    this.year = year;
+    this.month = month;
+    this.day = day;
+    this.hour = hour;
+    this.minute = minute;
+    this.comment = comment;
+}
+const contentFeedbackNode = document.querySelector('.content-feedback');
+let userCmtList = JSON.parse(localStorage.getItem('userCmtList'));
+if(userCmtList === null) userCmtList = [];
+const pushCmtNode = document.querySelector('.push-cmt');
+let feedbackUserList = document.querySelectorAll('.feedback-user');
+userCmtList.forEach(item => {
+    const feedbackUser = document.createElement('div');
+    feedbackUser.classList.add('feedback-user');
+    contentFeedbackNode.insertBefore(feedbackUser,feedbackUserList[0]);
+    feedbackUser.innerHTML = `
+    <div class="info-user">
+    <div class="hiddenn">${item.id}</div>
+    <div>
+        <img src="./images/iconuser.webp">
+    </div>
+    <div>
+        <div class="name-user">${item.name}</div>
+        <div class="user-choose-star">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- info user -->
+<div class="cmt-of-user">
+    <div class="day-cmt">${item.year}-${item.month+1}-${item.day} ${item.hour}:${item.minute}</div>
+    <div class="user-cmt"> 
+        ${item.comment}
+    </div>
+    <div class="delete-cmt">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>  
+    </div>
+</div>
+    `;
+    feedbackUserList = document.querySelectorAll('.feedback-user');
+
+})
+
+let deleteCmtNodes = document.querySelectorAll('.delete-cmt');
+function findIdUserCmt(node) {
+    let index = 0;
+    const idUser = node.parentElement.parentElement.children[1].textContent;
+    for(let i = 0; i < userCmtList.length; i += 1) {
+        if(userCmtList[i].id === idUser) {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+
+let idUser = userCmtList.length - 1;
+isSuccessfull = JSON.parse(localStorage.getItem('isSuccessfull'));
+pushCmtNode.addEventListener('click',() => {
+    if(isSuccessfull === false) {
+        alert('You must be logged in to be able to comment!');
+        closeAndCmtNode.classList.add('hiddenn');
+        inputCmtNode.value = '';
+    } else {
+        idUser += 1;
+    const dateTime = new Date();
+    const userCmt = new UserCmt(
+        idUser,
+        accountlogin.lastnamelogin,
+        dateTime.getFullYear(),
+        dateTime.getMonth(),
+        dateTime.getDate(),
+        dateTime.getHours(),
+        dateTime.getMinutes(),
+        inputCmtNode.value);
+    userCmtList.push(userCmt);
+    localStorage.setItem('userCmtList',JSON.stringify(userCmtList));
+    const feedbackUser = document.createElement('div');
+    feedbackUser.classList.add('feedback-user');
+    contentFeedbackNode.insertBefore(feedbackUser,feedbackUserList[0]);
+    feedbackUser.innerHTML = `
+    <div class="info-user">
+    <div class="hiddenn">${userCmt.id}</div>
+    <div>
+        <img src="./images/iconuser.webp">
+    </div>
+    <div>
+        <div class="name-user">${userCmt.name}</div>
+        <div class="user-choose-star">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- info user -->
+<div class="cmt-of-user">
+    <div class="day-cmt">${userCmt.year}-${userCmt.month+1}-${userCmt.day} ${userCmt.hour}:${userCmt.minute}</div>
+    <div class="user-cmt"> 
+        ${userCmt.comment}
+    </div>
+    <div class="delete-cmt">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>  
+    </div>
+</div>
+    `;
+    feedbackUserList = document.querySelectorAll('.feedback-user');
+    inputCmtNode.value = '';
+    const deleteCmtNode = feedbackUser.children[1].children[2];
+    deleteCmtNode.addEventListener('click',()=>{
+        let index = findIdUserCmt(deleteCmtNode);
+        userCmtList.splice(index,1);
+        localStorage.setItem('userCmtList',JSON.stringify(userCmtList));
+        deleteCmtNode.parentElement.parentElement.remove();
+    })
+    }
+})
+
+deleteCmtNodes.forEach(item => {
+    item.addEventListener('click',() => {
+        let index = findIdUserCmt(item);
+        userCmtList.splice(index,1);
+        localStorage.setItem('userCmtList',JSON.stringify(userCmtList));
+        item.parentElement.parentElement.remove();
+    })
+})

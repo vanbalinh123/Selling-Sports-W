@@ -52,6 +52,20 @@ const firstTotalNode = document.querySelector('.first-total');
 firstTotalNode.children[1].textContent = `$${fullTotal.toFixed(2)}`;
 contentCoverNode.children[4].children[1].textContent = `$${fullTotal.toFixed(2)}`;
 
+// const findProduct = (node) => {
+//     let index = -1;
+//     let nameProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[0].textContent;
+//     let sizeProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[1].children[0].textContent;
+//     let colorProduct = node.parentElement.parentElement.parentElement.children[0].children[1].children[1].children[1].textContent;
+//     for(let i = 0; i <= cart.length; i += 1) {
+//         if(cart[i].name === nameProduct && cart[i].size === sizeProduct && cart[i].color === colorProduct) {
+//             index = i;
+//             break;
+//         }
+//     }
+//     return index;
+// }
+
 const addNodes = document.querySelectorAll('.add');
 const subtractionNodes = document.querySelectorAll('.subtraction');
 const indexNodes = document.querySelectorAll('.index');
@@ -117,8 +131,3 @@ checkoutNode.addEventListener('click', ()=> {
     window.location = `checkout.html`
 })
 
-const productCartNode = document.querySelectorAll('.product');
-// const shoppingBagNode = document.querySelector('.shopping-bag');
-// shoppingBagNode.addEventListener('click', ()=> {
-//     window.location = `cart.html`;
-// })

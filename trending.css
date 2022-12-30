@@ -251,7 +251,7 @@
     font-size: 3rem;
 }
 
-svg {
+.feedback svg {
     width: 2rem;
     height: 2rem;
 }
@@ -303,6 +303,7 @@ svg {
     flex-direction: column;
     gap: 3rem;
     margin: 0 auto;
+    position: relative;
 }
 
 .feedback-user img {
@@ -318,6 +319,7 @@ svg {
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-right: 2rem;
+    position: relative;
 }
 
 .info-user {
@@ -371,4 +373,76 @@ svg {
 .one {
     color: #fff;
     background-color: #343434;
+}
+
+.you-can-cmt {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-feedback input {
+    width: 100%;
+    height: 5rem;
+    padding-left: 2rem;
+}
+
+.input-feedback {
+    margin: 0 auto;
+    width: 90%;
+    height: 5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.user-login-cmt {
+    border: 1px solid #342A2A;
+    width: 5%;
+    height: 5rem;
+    overflow: hidden;
+}
+
+.user-login-cmt img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.close-cmt {
+    display: flex;
+    gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: end;
+}
+
+.close-cmt div {
+    border: 1px solid #342A2A;
+    padding: 1rem 1.5rem;
+}
+
+.delete-cmt {
+    /* border: 1px solid #342A2A; */
+    border-left: 1px solid #342A2A;
+    border-bottom: 1px solid #342A2A;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-cmt:hover {
+    color: #fff;
+    background-color: #342A2A;
+    
+}
+
+.hiddenn {
+    display: none;
 }

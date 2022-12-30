@@ -192,9 +192,16 @@ if(isSuccessfull === true) {
 
 const svgUserNode = document.querySelector('.svg-user');
 const logregNode = document.querySelector('.log-reg')
-
+let abc = 0;
 svgUserNode.addEventListener('click', () => {
-    logregNode.classList.add('hidden-log-reg');
+    if(logregNode.classList.contains('hidden-log-reg')) {
+        logregNode.classList.remove('hidden-log-reg');
+        abc = 0;
+    }
+    else {
+        logregNode.classList.add('hidden-log-reg');
+        abc = 1;
+    }
     const userLoginNode = document.querySelector('.user-login');
     userLoginNode.addEventListener('click', ()=> {
         window.location = `login.html`
@@ -220,3 +227,12 @@ svgUserNode.addEventListener('click', () => {
     })
 }) 
 
+const bodyNode = document.querySelector('body');
+bodyNode.addEventListener('click',()=> {
+    if(logregNode.classList.contains('hidden-log-reg')) {
+        if(abc === 1) abc = 2;
+        else {
+            logregNode.classList.remove('hidden-log-reg');
+        }
+    }
+})

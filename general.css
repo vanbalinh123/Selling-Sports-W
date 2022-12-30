@@ -509,7 +509,6 @@ footer::placeholder {
     border-radius: 1rem;
     background-color: #fff;
     border: 1px solid #342A2A;
-    transition: visibility 0.3s;
 }
 
 .log-reg div {
