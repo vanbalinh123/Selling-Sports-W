@@ -1,44 +1,46 @@
 cart = JSON.parse(localStorage.getItem('cart'));
 if(cart === null) cart = [];
 const allProductNode = document.querySelector('.allProduct');
-let chooseProduct = {
-    trendingImg: '',
-    trendingName: '',
-    trendingPrice: '',
-    selectedSizeNode: '',
-    selectedColorNode: ''
-}
-cart.forEach(item => {
-    const price = item.price.slice(1,item.price.length);
-    const total = Number(price) * item.index;
-    const productNode = document.createElement('div');
-    productNode.classList.add('products')
-    allProductNode.appendChild(productNode);
-    productNode.innerHTML = `
-        <div class="product">
-            <div class="product-img">
-                <img src="${item.img}">
-            </div>
-            <div class="content-img">
-                <div>${item.name}</div>
-                    <div class="choose-size-color">
-                        <div class="size">${item.size}</div>
-                        <div class="color">/${item.color}</div>
+// let chooseProduct = {
+//     trendingImg: '',
+//     trendingName: '',
+//     trendingPrice: '',
+//     selectedSizeNode: '',
+//     selectedColorNode: ''
+// }
+if(cart !== null) {
+    cart.forEach(item => {
+        const price = item.price.slice(1,item.price.length);
+        const total = Number(price) * item.index;
+        const productNode = document.createElement('div');
+        productNode.classList.add('products')
+        allProductNode.appendChild(productNode);
+        productNode.innerHTML = `
+            <div class="product">
+                <div class="product-img">
+                    <img src="${item.img}">
+                </div>
+                <div class="content-img">
+                    <div>${item.name}</div>
+                        <div class="choose-size-color">
+                            <div class="size">${item.size}</div>
+                            <div class="color">/${item.color}</div>
+                        </div>
+                        <div>${item.price}</div>
                     </div>
-                    <div>${item.price}</div>
                 </div>
-            </div>
-            <div class="quantity">
-                <div class="amount-product">
-                    <p class="subtraction">-</p>
-                    <p class="index">${item.index}</p>
-                    <p class="add">+</p>
+                <div class="quantity">
+                    <div class="amount-product">
+                        <p class="subtraction">-</p>
+                        <p class="index">${item.index}</p>
+                        <p class="add">+</p>
+                    </div>
+                    <div class="remove">Remove</div>
                 </div>
-                <div class="remove">Remove</div>
-            </div>
-            <div class="total full-total">$${total.toFixed(2)}</div>
-        </div>`;
-});
+                <div class="total full-total">$${total.toFixed(2)}</div>
+            </div>`;
+    });
+}
 
 let fullTotal = 0;
 cart.forEach(item => {
