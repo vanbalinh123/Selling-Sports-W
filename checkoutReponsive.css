@@ -1,0 +1,67 @@
+@media (max-width: 1200px) {
+    .header__listItem {
+        display: none;
+    }
+
+    .hiddenn {
+        display: flex;
+        font-size: 2.3rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    footer {
+        display: grid;
+        height: 100%;
+    }
+
+    .footer-title {
+        width: 100%;
+        padding-left: 5%;
+        border-bottom: 1px solid antiquewhite;
+        padding-bottom: 5rem;
+    }
+
+    .footer4 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer3 input {
+        width: 50%;
+    }
+
+    .relative-svg {
+        position: relative;
+    }
+
+    .muiten {
+        position: absolute;
+        left: 45%;
+    }
+    
+    .interface-search {
+        width: 50%;
+    }
+}
+
+@media (max-width: 944px) {
+    .section-checkout {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 704px) {
+    .interface-search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 544px) {
+    .question-account {
+        font-size: 1.3rem;
+    }
+}

@@ -1,8 +1,254 @@
-/* @media (max-width: 1300px) {
-    .header .header__listItem {
+@media (max-width: 1200px) {
+    .header__listItem {
         display: none;
     }
-    .header {
-        width: 1100px;
+
+    .hiddenn {
+        display: flex;
+        font-size: 2.3rem;
+        margin: 0 auto;
+        text-align: center;
     }
-} */
+
+    .section-five-img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .section-five-img img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .section-five-product {
+        height: 30rem;
+    }
+
+    .section-six {
+        margin-top: 40rem;
+    }
+
+    .section-two .section-two-img {
+        height: 25rem;
+        width: 30rem;
+    }
+
+    .section-two .section-two-img img {
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+    }
+
+    .section-two-content {
+        height: 25rem;
+        width: 30rem;
+        position: relative;
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+
+    .section-one-content h1 {
+        font-size: 4rem;
+    }
+
+    .section-one-content {
+        display: flex;
+        gap: 0rem;
+    }
+
+    .section-four-img img {
+        /* flex: 1; */
+        width: 20rem;
+        height: 20rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform 0.2s;
+    }
+
+    .section-four-img {
+        gap: 0rem;
+    }
+
+    .section-four-content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .section-four-click {
+        padding-top: 2rem;
+        flex: 0;
+    }
+
+    .section-four-title {
+        flex: 0;
+        padding: 5rem 0rem;
+    }
+
+    .section-six {
+        height: 40rem;
+    }
+
+    .section-six-content {
+        width: 65%;
+        height: 40rem;
+        font-size: 1.5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        z-index: 2;
+    }
+
+    .section-six-img img {
+        height: 40rem;
+        box-shadow: none;
+    }
+
+    .section-six-img {
+        width: 35%;
+        height: 40rem;
+    }
+
+    .section-seven {
+        height: 40rem;
+    }
+
+    .section-seven-content {
+        width: 65%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        height: 40rem;
+        font-size: 1.5rem;
+        z-index: 2;
+    }
+
+    .section-seven-img {
+        width: 35%;
+        height: 40rem;
+    }
+
+    .section-seven-img img {
+        height: 40rem;
+        box-shadow: none;
+    }
+    
+    footer {
+        display: grid;
+        height: 100%;
+    }
+
+    .footer-title {
+        width: 100%;
+        padding-left: 5%;
+        border-bottom: 1px solid antiquewhite;
+        padding-bottom: 5rem;
+    }
+
+    .footer4 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer3 input {
+        width: 50%;
+    }
+
+    .relative-svg {
+        position: relative;
+    }
+
+    .muiten {
+        position: absolute;
+        left: 45%;
+    }
+    
+    .interface-search {
+        width: 50%;
+    }
+}
+
+@media (max-width: 944px) {
+    .section-five-product {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-template-rows: 30rem 30rem;
+        height: 70rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .section-six {
+        margin-top: 65rem;
+    }
+    
+    .section-two-content {
+        height: 25rem;
+        object-fit: cover;
+        /* padding-left: 10rem; */
+    }
+
+    .section-two {
+        overflow: scroll;
+        padding-left: 23rem;
+    }
+
+    .section-four-img {
+        overflow: scroll;
+        padding-left: 25rem;
+    }
+
+    .section-two a {
+        width: 10rem;
+        text-align: center;
+    }
+
+    .interface-search {
+        width: 50%;
+    }
+}
+
+@media (max-width: 704px) {
+    .section-two {
+        padding-left: 40rem;
+    }
+
+    .section-three-title h1, h3 {
+        transform: scale(0.8);
+    }
+
+    .section-four-img {
+        overflow: scroll;
+        padding-left: 40rem;
+    }
+
+    .interface-search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 544px) {
+    .section-two {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        justify-content: flex-start;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-four-img {
+        /* overflow: hidden; */
+        padding-right: 5%;
+    }
+
+    .section-six-content,
+    .section-seven-content {
+        gap: 1rem;
+    }
+}
