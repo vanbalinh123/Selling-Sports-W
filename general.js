@@ -178,20 +178,25 @@ for(let i = 0; i < searchs.length; i+=1) {
 
 isSuccessfull = JSON.parse(localStorage.getItem('isSuccessfull'));
 let accountlogin = JSON.parse(localStorage.getItem('accountlogin'));
+const userREgisterNode = document.querySelector('.user-register');
+const svgUserNode = document.querySelector('.svg-user');
+const logregNode = document.querySelector('.log-reg')
+const userLoginNode = document.querySelector('.user-login');
+
 if(isSuccessfull === true) {
     const nameAccountNode = document.querySelector('.name-account');
     const firstnamelogin = document.querySelector('.firstnamelogin');
     const lastnamelogin = document.querySelector('.lastnamelogin');
-    nameAccountNode.classList.add('hidden-if-no-login')
+    nameAccountNode.classList.add('hidden-if-no-login');
     firstnamelogin.textContent = `${accountlogin.firstnamelogin}`;
     lastnamelogin.textContent = `${accountlogin.lastnamelogin}`;
+    userREgisterNode.classList.add('hiddenn');
+    userLoginNode.classList.add('hiddenn');
 } else if(isSuccessfull === false) {
     const nameAccountNode = document.querySelector('.name-account');
-    nameAccountNode.classList.remove('hidden-if-no-login')
+    nameAccountNode.classList.remove('hidden-if-no-login');
 }
 
-const svgUserNode = document.querySelector('.svg-user');
-const logregNode = document.querySelector('.log-reg')
 let abc = 0;
 svgUserNode.addEventListener('click', () => {
     if(logregNode.classList.contains('hidden-log-reg')) {
@@ -202,12 +207,11 @@ svgUserNode.addEventListener('click', () => {
         logregNode.classList.add('hidden-log-reg');
         abc = 1;
     }
-    const userLoginNode = document.querySelector('.user-login');
     userLoginNode.addEventListener('click', ()=> {
-        window.location = `login.html`
+        window.location = `login.html`;
     });
 
-    const userREgisterNode = document.querySelector('.user-register');
+    // const userREgisterNode = document.querySelector('.user-register');
     userREgisterNode.addEventListener('click', ()=> {
         window.location = `register.html`
     });

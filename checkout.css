@@ -394,3 +394,7 @@
     font-size: 2rem;
     padding-bottom: 5rem;
 }
+
+.hiddenCheckout {
+    display: none;
+}

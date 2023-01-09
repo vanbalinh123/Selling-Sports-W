@@ -64,6 +64,14 @@ const checkValid = function(item) {
     if(item.value === '') kt = 1;
     return kt;
 }
+
+if(isSuccessfull === true) {
+    const questionAccountNode = document.querySelector('.question-account');
+    questionAccountNode.classList.add('hiddenCheckout');
+    firstnameNode.value = `${accountlogin.firstnamelogin}`;
+    lastnameNode.value = `${accountlogin.lastnamelogin}`;
+} 
+
 checkoutNode.addEventListener('click', ()=> {
     let temp = 0;
     if(cart.length === 0) {
@@ -77,9 +85,8 @@ checkoutNode.addEventListener('click', ()=> {
             emailNode.classList.remove('error');
             textcontentEmail.textContent = ``;
             // if(isSuccessfull === true) {
-            //     // if(emailNode.value !== accountlogin.emaillogin) {
-            //         alert('This is not the email you signed up with!');
-            //     // }; 
+            //     const questionAccountNode = document.querySelector('.question-account');
+            //     questionAccountNode.classList.add('hiddenn')
             // } 
             if(isSuccessfull === false) {
                 alert('Can not pay because you have not logged into your account!');
@@ -158,7 +165,7 @@ checkoutNode.addEventListener('click', ()=> {
         fullTotal = 0;
         localStorage.setItem('fullTotal',JSON.stringify(fullTotal));
         fullTotal = JSON.parse(localStorage.getItem('fullTotal'));
-        window.location = `checkout.html`;
+        window.location = `index.html`;
     } 
 })
 
