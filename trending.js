@@ -193,7 +193,7 @@ userCmtList.forEach(item => {
     <div class="info-user">
     <div class="hiddenn">${item.id}</div>
     <div>
-        <img src="./images/iconuser.webp">
+        <img src=".images/iconuser.webp">
     </div>
     <div>
         <div class="name-user">${item.name}</div>
@@ -275,7 +275,7 @@ pushCmtNode.addEventListener('click',() => {
     <div class="info-user">
     <div class="hiddenn">${userCmt.id}</div>
     <div>
-        <img src="./images/iconuser.webp">
+        <img src=".images/iconuser.webp">
     </div>
     <div>
         <div class="name-user">${userCmt.name}</div>
